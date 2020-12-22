@@ -1,0 +1,22 @@
+
+{
+  "name": "Tapmaca",
+  "description": "Tapmaca",
+  "keywords": [
+    "telegram",
+    "best",
+    "group",
+    "manager",
+    "3"
+  ],
+  "repository": "https://github.com/umudmmmdov1/Tapmaca",
+  
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "10"
+      }
+    }
+  ]
+}
