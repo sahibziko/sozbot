@@ -1,7 +1,7 @@
-TOKEN = '1426541435:AAHQimxtw99vvMJzzsdvVBGejoU10RNJvdg'  # Learn how to get one on https://core.telegram.org/bots#6-botfather
-ADMIN_ID = 1484792208
+TOKEN = '1495875069:AAF9TSdEIwHxRhozbXf44Vjq_Ib1jHlqvFY'  # Learn how to get one on https://core.telegram.org/bots#6-botfather
+ADMIN_ID = 1419590194
 SKIP_PENDING = False  # Skip pending updates on bot startup
-PLAYERS_COUNT_TO_START = 4  # Minimal quantity of players that is required to start mafia game
+PLAYERS_COUNT_TO_START = 1  # Minimal quantity of players that is required to start mafia game
 PLAYERS_COUNT_LIMIT = 10  # Maximum quantity of players that is allowed to start mafia game
 REQUEST_OVERDUE_TIME = 10 * 60  # Time (in seconds) of request's inactivity after which it gets deleted from database
 WORD_BASE = '/root/words.txt'  # File encoded with cp1251 containing word on each line
