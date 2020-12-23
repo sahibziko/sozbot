@@ -37,7 +37,7 @@ def setup_logger():
 
 
 def help(update, context):
-    update.message.reply_text('Tapmaca əmrlər ⌨️\n\n' +
+    update.message.reply_text('R7K əmrlər ⌨️\n\n' +
                               '/basla - Yeni bir oyun başlat\n' +
                               '/aparici - Aparıcı ol\n' +
                               '/reyting - Ən yaxşı oyunçular 🏆', reply_to_message_id=True)
@@ -66,9 +66,9 @@ def button(update, context):
 def command_start(update, context: CallbackContext):
     if update.effective_chat.type == "private":
         
-        addme = InlineKeyboardButton(text="Məni qrupuna əlavə et 🎅", url="https://t.me/tapmacabot?startgroup=a")
-        sohbet = InlineKeyboardButton(text="🎄 Oyun qrupumuz", url="https://t.me/SohbetAZ")
-        admin = InlineKeyboardButton(text="☃️ Məni yaradan", url="https://t.me/umudmmmdov1")
+        addme = InlineKeyboardButton(text="Məni qrupuna əlavə et 🎅", url="https://t.me/creativeclan?startgroup=a")
+        sohbet = InlineKeyboardButton(text="🎄 Oyun qrupumuz", url="https://t.me/creativeclan")
+        admin = InlineKeyboardButton(text="☃️ Məni yaradan", url="https://t.me/ra7narok")
 
         keyboard = [[addme],[sohbet],[admin]]
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -86,7 +86,7 @@ def command_start(update, context: CallbackContext):
         game = get_or_create_game(chat_id)
         game.start()
 
-        update.message.reply_text('Tapmaca oyunu başladı! 🥰\n\nHo-Ho-Ho 🎅'.format(username), reply_to_message_id=True)
+        update.message.reply_text('R7K ilə oyunu başladı! 🥰\n\n🇦🇿'.format(username), reply_to_message_id=True)
 
         set_master(update, context)
 
@@ -104,12 +104,12 @@ def set_master(update, context):
     game.set_master(update.message.from_user.id)
 
     show_word_btn = InlineKeyboardButton("Sözə bax 👀", callback_data='show_word')
-    change_word_btn = InlineKeyboardButton("Sözü dəyişdir ❄️", callback_data='change_word')
+    change_word_btn = InlineKeyboardButton("Sözü dəyişdir 💎", callback_data='change_word')
 
     keyboard = [[show_word_btn], [change_word_btn]]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('[{}](tg://user?id={}) *Sözü başa salır!* 🎅'.format(username,user_id), reply_to_message_id=True, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+    update.message.reply_text('🥀😈[{}](tg://user?id={}) *Sözü başa salır!*🤔 🇦🇿'.format(username,user_id), reply_to_message_id=True, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
 
 
 def command_master(update: Update, context):
