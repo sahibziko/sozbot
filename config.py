@@ -9,7 +9,7 @@ DELETE_FROM_EVERYONE = False  # Should bot delete messages from everyone in the 
 
 SET_WEBHOOK = True  # Uses long polling if set to False
 if SET_WEBHOOK:  # Refer to https://core.telegram.org/bots/webhooks to learn how to setup webhook components
-    SERVER_IP = '216.239.32.68'
+    SERVER_IP = 'localhost'
     SERVER_PORT = 80
     SSL_CERT = '/root/cert/PUBLIC.pem'  # File path of public SSL certificate
     SSL_PRIV = '/root/cert/PRIVATE.key'  # File path of private key of SSL certificate
