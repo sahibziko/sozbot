@@ -110,7 +110,10 @@ def set_master(update, context):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     update.message.reply_text('🥀😈[{}](tg://user?id={}) *Sözü başa salır!*🤔 🇦🇿'.format(username,user_id), reply_to_message_id=True, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
-
+    if game.is_master_time_left():
+        update.message.reply_text('Səhər açıldı ama hələ sözü tapmadız ☹️'.format(game.get_master_time_left()),
+                                  reply_to_message_id=True)
+        return
 
 def command_master(update: Update, context):
     chat_id = update.message.chat.id
