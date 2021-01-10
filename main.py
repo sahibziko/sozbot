@@ -125,7 +125,7 @@ def command_master(update: Update, context):
 
     if not game.is_master_time_left():
         #update.message.reply_text('Aparıcı olmaq üçün {} saniyə var ☹️'.format(game.get_master_time_left()),
-                                  reply_to_message_id=True)
+                                 # reply_to_message_id=True)
         return
 
     logger.info('Got command /master,'
