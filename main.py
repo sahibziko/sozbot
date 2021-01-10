@@ -39,8 +39,7 @@ def setup_logger():
 def help(update, context):
     update.message.reply_text('R7K əmrlər ⌨️\n\n' +
                               '/basla - Yeni bir oyun başlat\n' +
-                              '/aparici - Aparıcı ol\n' +
-                              '/reyting - Ən yaxşı oyunçular 🏆', reply_to_message_id=True)
+                              '/help - Komek\n', reply_to_message_id=True)
 
 
 def button(update, context):
@@ -72,7 +71,7 @@ def command_start(update, context: CallbackContext):
 
         keyboard = [[addme],[sohbet],[admin]]
         reply_markup = InlineKeyboardMarkup(keyboard)
-        update.message.reply_text('Özəl söhbətdə oyun başlaya bilməz 💀', reply_to_message_id=True, reply_markup=reply_markup)
+        update.message.reply_text('Özəl söhbətdə Motivasiya olabilmezsen -_- 💀', reply_to_message_id=True, reply_markup=reply_markup)
     else:
         chat_id = update.message.chat.id
         user_id = update.message.from_user.id
@@ -86,7 +85,7 @@ def command_start(update, context: CallbackContext):
         game = get_or_create_game(chat_id)
         game.start()
 
-        update.message.reply_text('R7K ilə oyunu başladı! 🥰\n\n🇦🇿'.format(username), reply_to_message_id=True)
+        #update.message.reply_text('R7K ilə oyunu başladı! 🥰\n\n🇦🇿'.format(username), reply_to_message_id=True)
 
         set_master(update, context)
 
@@ -103,15 +102,15 @@ def set_master(update, context):
 
     game.set_master(update.message.from_user.id)
 
-    show_word_btn = InlineKeyboardButton("Sözə bax 👀", callback_data='show_word')
-    change_word_btn = InlineKeyboardButton("Sözü dəyişdir 💎", callback_data='change_word')
+    #show_word_btn = InlineKeyboardButton("Sözə bax 👀", callback_data='show_word')
+    #change_word_btn = InlineKeyboardButton("Sözü dəyişdir 💎", callback_data='change_word')
 
     keyboard = [[show_word_btn], [change_word_btn]]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('🥀😈[{}](tg://user?id={}) *Sözü başa salır!*🤔 🇦🇿'.format(username,user_id), reply_to_message_id=True, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
+    update.message.reply_text('🥀😈[{}](tg://user?id={}) * '(word)'.'.format(username,user_id), reply_to_message_id=True, reply_markup=reply_markup, parse_mode=ParseMode.MARKDOWN)
     if (game.get_master_time_left<=2): #buradi
-        update.message.reply_text('Səhər açıldı ama hələ sözü tapmadız ☹️'.format(game.get_master_time_left()),
+        #update.message.reply_text('gg'.format(game.get_master_time_left()),
                                   reply_to_message_id=True)
         return
 
@@ -207,7 +206,7 @@ def is_word_answered(update, context):
     word = game.get_current_word()
 
     if game.is_word_answered(user_id, text):
-        update.message.reply_text('*{}* sözünü [{}](tg://user?id={}) tapdı ✅'.format(word, username,user_id), reply_to_message_id=True, parse_mode=ParseMode.MARKDOWN)
+       # update.message.reply_text('*{}* sözünü [{}](tg://user?id={}) tapdı ✅'.format(word, username,user_id), reply_to_message_id=True, parse_mode=ParseMode.MARKDOWN)
 
         game.update_rating(user_id, username)
 
